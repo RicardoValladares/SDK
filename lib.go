@@ -9,8 +9,6 @@ import (
 	"os"
 )
 
-func init() { }
-
 func Exit() {
 	os.Exit(3)
 }

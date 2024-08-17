@@ -17,6 +17,10 @@ func Println(text string) {
 	fmt.Println(text)
 }
 
+func Print(text string) {
+	fmt.Print(text)
+}
+
 func Read() string {
 	var c string
 	fmt.Scanf("%s", &c)

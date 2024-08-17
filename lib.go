@@ -1,4 +1,4 @@
-// file lb.go
+// file lib.go
 
 // +build !js
 

@@ -6,6 +6,7 @@ package SDK
 
 import (
 	"syscall/js"
+	"os"
 )
 
 var c chan string
@@ -17,6 +18,7 @@ func init() {
 
 func Exit() {
 	js.Global().Get("dostoy").Call("setPrompt", ">")
+	os.Exit(3)
 }
 
 func Println(text string) {

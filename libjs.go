@@ -15,15 +15,15 @@ func init() {
 	js.Global().Set("read", js.FuncOf(reader))
 }
 
-func exit() {
+func Exit() {
 	js.Global().Get("dostoy").Call("setPrompt", ">")
 }
 
-func println(text string) {
+func Println(text string) {
 	js.Global().Get("dostoy").Call("println", text)
 }
 
-func read() string {
+func Read() string {
 	c = make(chan string)
 	return <-c
 }

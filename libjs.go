@@ -25,6 +25,10 @@ func Println(text string) {
 	js.Global().Get("dostoy").Call("println", text)
 }
 
+func Print(text string) {
+	js.Global().Get("dostoy").Call("print", text)
+}
+
 func Read() string {
 	c = make(chan string)
 	return <-c

@@ -41,5 +41,5 @@ func reader(this js.Value, inputs []js.Value) interface{} {
 	} else {
 		c <- ""
 	}
-	return nil
+	return ""
 }

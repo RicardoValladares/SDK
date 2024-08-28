@@ -7,6 +7,7 @@ package SDK
 import (
 	"syscall/js"
 	"os"
+	"strings"
 )
 
 var c chan string
@@ -32,10 +33,37 @@ func Exit() {
 }
 
 func Println(text string) {
+
+	/* INICIO AGREGADO */
+	if strings.Contains(text,"\n"){
+		lines := strings.Split(text, "\n")
+		for _, line := range lines {
+			js.Global().Get("dostoy").Call("println", line)
+		}
+		return
+	}
+	/* FIN GREGADO */
+	
+	
 	js.Global().Get("dostoy").Call("println", text)
 }
 
 func Print(text string) {
+	
+	/* INICIO AGREGADO */
+	if strings.Contains(text,"\n"){
+		lines := strings.Split(text, "\n")
+		for index, line := range lines {
+			if index == (len(lines)-1){
+				js.Global().Get("dostoy").Call("print", line)
+			} else {
+				js.Global().Get("dostoy").Call("println", line)
+			}
+		}
+		return
+	}
+	/* FIN GREGADO */
+	
 	js.Global().Get("dostoy").Call("print", text)
 }
 

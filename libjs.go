@@ -11,12 +11,14 @@ import (
 )
 
 var c chan string
+var r int
 
 func init() {
 	c = make(chan string)
 	js.Global().Set("read", js.FuncOf(reader))
 
 	/* INICIO AGREGADO */
+	r = 0
 	js.Global().Get("dostoy").Call("setPrompt", "")
 	js.Global().Get("dostoy").Call("setShell", "false")
 	js.Global().Get("dostoy").Call("println", "")
@@ -28,7 +30,9 @@ func Exit() {
 	js.Global().Get("dostoy").Call("println", "")
 	js.Global().Get("dostoy").Call("setPrompt", ">")
 	js.Global().Get("dostoy").Call("setShell", "true")
-	js.Global().Get("dostoy").Call("print", ">")
+	if r == 1 {
+		js.Global().Get("dostoy").Call("print", ">")
+	}
 	/* FIN GREGADO */
 	os.Exit(3)
 }
@@ -70,6 +74,7 @@ func Print(text string) {
 
 func Read() string {
 	/* INICIO AGREGADO */
+	r = 1
 	js.Global().Get("dostoy").Call("setShell", "true")
 	/* FIN GREGADO */
 	

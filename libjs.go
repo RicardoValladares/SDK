@@ -30,7 +30,7 @@ func Exit() {
 	js.Global().Get("dostoy").Call("println", "")
 	js.Global().Get("dostoy").Call("setPrompt", ">")
 	js.Global().Get("dostoy").Call("setShell", "true")
-	if r == 1 {
+	if r == 0 {
 		js.Global().Get("dostoy").Call("print", ">")
 	}
 	/* FIN GREGADO */

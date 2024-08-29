@@ -28,6 +28,7 @@ func Exit() {
 	js.Global().Get("dostoy").Call("println", "")
 	js.Global().Get("dostoy").Call("setPrompt", ">")
 	js.Global().Get("dostoy").Call("setShell", "true")
+	js.Global().Get("dostoy").Call("print", ">")
 	/* FIN GREGADO */
 	os.Exit(3)
 }

@@ -84,7 +84,7 @@ func QR(text string) {
 	}
 	for ir, row := range c.Bitmap() {
 		for ic, cell := range row {
-			if ic!=0 && ir!=0 && ic!=1 && ir!=1 && ic!=2 && ir!=2 && ic!=34 && ir!=34 && ic!=35 && ir!=35 && ic!=36 && ir!=36 {
+			if ic!=0 && ir!=0 && ic!=1 && ir!=1 && ic!=2 && ir!=2 && ic!=(len(image)-4) && ir!=(len(row)-3) && ic!=(len(image)-2) && ir!=(len(row)-2) && ic!=(len(image)-1) &&  ir!=(len(row)-1) {
 				if cell {
 					js.Global().Get("dostoy").Call("color", "0", "0")
 					js.Global().Get("dostoy").Call("print", " ")
@@ -94,7 +94,7 @@ func QR(text string) {
 				}	
 			}
 		}
-		if ir!=34 && ir!=35 && ir!=36 {
+		if ir!=(len(row)-3) && ir!=(len(row)-2) && ir!=(len(row)-1) {
 			js.Global().Get("dostoy").Call("println", " ")
 		}
 	}

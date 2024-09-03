@@ -33,7 +33,8 @@ func QR(text string) {
 	if err != nil {
 		return
 	}
-	for ir, row := range c.Bitmap() {
+	image := c.Bitmap()
+	for ir, row := range image {
 		for ic, cell := range row {
 			if ic!=0 && ir!=0 && ic!=1 && ir!=1 && ic!=2 && ir!=2 && ic!=(len(image)-3) && ir!=(len(row)-3) && ic!=(len(image)-2) && ir!=(len(row)-2) && ic!=(len(image)-1) &&  ir!=(len(row)-1) {
 				if cell {

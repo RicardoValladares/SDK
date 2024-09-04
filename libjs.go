@@ -96,7 +96,7 @@ func QR(text string) {
 			}
 		}
 		if ir!=(len(row)-3) && ir!=(len(row)-2) && ir!=(len(row)-1) {
-			js.Global().Get("dostoy").Call("println", " ")
+			js.Global().Get("dostoy").Call("println", "")
 		}
 	}
 }

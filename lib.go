@@ -14,6 +14,14 @@ func Exit() {
 	os.Exit(3)
 }
 
+func Shell() {
+	os.Exit(3)
+}
+
+func Startx() {
+	fmt.Println("GUI")
+}
+
 func Println(text string) {
 	fmt.Println(text)
 }

@@ -40,7 +40,7 @@ func Shell() {
 
 func Startx() {
 	var canva = js.Global().Get("document").Call("getElementById", "viewPort")
-	canvas.Call("setAttribute","style","display:none")
+	canva.Call("setAttribute","style","display:none")
 }
 
 func Println(text string) {

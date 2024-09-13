@@ -33,6 +33,16 @@ func Exit() {
 	os.Exit(3)
 }
 
+func Shell() {
+	js.Global().Call("reload")
+	os.Exit(3)
+}
+
+func Startx() {
+	var canva = js.Global().Get("document").Call("getElementById", "viewPort")
+	canvas.Call("setAttribute","style","display:none")
+}
+
 func Println(text string) {
 	if strings.Contains(text,"\n"){
 		lines := strings.Split(text, "\n")

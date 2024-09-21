@@ -38,9 +38,8 @@ func Shell() {
 	os.Exit(3)
 }
 
-func Startx() {
-	var canva = js.Global().Get("document").Call("getElementById", "viewPort")
-	canva.Call("setAttribute","style","display:none")
+func Startx(display string) {
+	var canva = js.Global().Get("dostoy").Call("startx", display)
 }
 
 func Println(text string) {

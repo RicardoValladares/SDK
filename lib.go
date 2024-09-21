@@ -18,8 +18,8 @@ func Shell() {
 	os.Exit(3)
 }
 
-func Startx() {
-	fmt.Println("GUI")
+func Startx(display string) {
+	fmt.Println("GUI: "+display)
 }
 
 func Println(text string) {

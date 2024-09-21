@@ -39,7 +39,7 @@ func Shell() {
 }
 
 func Startx(display string) {
-	var canva = js.Global().Get("dostoy").Call("startx", display)
+	js.Global().Get("dostoy").Call("startx", display)
 }
 
 func Println(text string) {

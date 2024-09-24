@@ -32,7 +32,7 @@ func Print(text string) {
 
 func Read() string {
 	var c string
-	fmt.Scanf("%s", &c)
+	fmt.Scan(&c)
 	return c
 }
 
